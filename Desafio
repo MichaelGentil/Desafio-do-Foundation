@@ -167,7 +167,6 @@ ____________________________________
 R:
 ____________________________________
 
-// Defina a estrutura da casa com as propriedades necessárias
 struct House {
     var address: String
     var city: String
@@ -177,37 +176,34 @@ struct House {
     var endDate: Date
 }
 
-// Criação do dia de início ao fim, porém, está fixado em determinado dia, mês e ano
-let startDate = Calendar.current.date(from: DateComponents(year: 2023, month: 5, day: 3))!
-let endDate = Calendar.current.date(from: DateComponents(year: 2023, month: 8, day: 3))!
+let startDate = Calendar.current.date(from: DateComponents(year: 2023, month: 3, day: 31))!
+let endDate = Calendar.current.date(from: DateComponents(year: 2023, month: 4, day: 3))!
 
-// Crie uma matriz de casas
 let houses = [
     House(address: "Av. Cásper Líbero", city: "São Paulo", numberOfRooms: 2, price: 1500.00, startDate: startDate, endDate: endDate),
-    House(address: "R. Antônio Basílio", city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00, startDate: startDate, endDate: endDate),
-    House(address: "R. Anne Frank", city: "Curitiba", numberOfRooms: 4, price: 3500.00, startDate: startDate, endDate: endDate),
-    House(address: "R. Araruama", city: "Belo Horizonte", numberOfRooms: 3, price: 2000.00, startDate: startDate, endDate: endDate),
-    House(address: "R. Vidal Ramos", city: "Florianópolis", numberOfRooms: 2, price: 1800.00, startDate: startDate, endDate: endDate),
+    House(address: "R. Antônio Basílio", city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00, startDate: Date(), endDate: Date()),
+    House(address: "R. Anne Frank", city: "Curitiba", numberOfRooms: 4, price: 3500.00, startDate: Date(), endDate: Date()),
+    House(address: "R. Araruama", city: "Belo Horizonte", numberOfRooms: 3, price: 2000.00, startDate: Date(), endDate: Date()),
+    House(address: "R. Vidal Ramos", city: "Florianópolis", numberOfRooms: 2, price: 1800.00, startDate: Date(), endDate: Date()),
     House(address: "Av. Ipiranga", city: "Porto Alegre", numberOfRooms: 1, price: 1000.00, startDate: startDate, endDate: endDate)
 ]
 
-//Filtra o valor do preço da casa e multiplica pela quantidade de dias determinada
 func calculateBudget(for house: House, numberOfDays: Int) -> Double {
     return house.price * Double(numberOfDays)
 }
 
 
-// Filtra a cidade, número de quartos e o preço do local
+
 let filteredHouses = houses.filter { house in
     house.city == "Porto Alegre" &&
     house.numberOfRooms <= 4 &&
     house.price < 2000.00 &&
     house.startDate <= startDate && house.endDate >= endDate &&
-    calculateBudget(for: house, numberOfDays: 10) < 15000.00 // Filtra o valor de dias em menos de um valor determinado
+    calculateBudget(for: house, numberOfDays: 9) < 15000.00
 }
 
 print(filteredHouses.count)
-// Imprime todos os locais do filtro
+
 for house in filteredHouses {
     let numberOfDays = 4 // determina o número de dias do orçamento
     let budget = calculateBudget(for: house, numberOfDays: numberOfDays)
