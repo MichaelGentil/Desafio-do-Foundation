@@ -181,11 +181,12 @@ let endDate = Calendar.current.date(from: DateComponents(year: 2023, month: 4, d
 
 let houses = [
     House(address: "Av. Cásper Líbero", city: "São Paulo", numberOfRooms: 2, price: 1500.00, startDate: startDate, endDate: endDate),
-    House(address: "R. Antônio Basílio", city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00, startDate: Date(), endDate: Date()),
-    House(address: "R. Anne Frank", city: "Curitiba", numberOfRooms: 4, price: 3500.00, startDate: Date(), endDate: Date()),
-    House(address: "R. Araruama", city: "Belo Horizonte", numberOfRooms: 3, price: 2000.00, startDate: Date(), endDate: Date()),
-    House(address: "R. Vidal Ramos", city: "Florianópolis", numberOfRooms: 2, price: 1800.00, startDate: Date(), endDate: Date()),
-    House(address: "Av. Ipiranga", city: "Porto Alegre", numberOfRooms: 1, price: 1000.00, startDate: startDate, endDate: endDate)
+    House(address: "R. Antônio Basílio", city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00, startDate: startDate, endDate: endDate),
+    House(address: "R. Anne Frank", city: "Curitiba", numberOfRooms: 4, price: 3500.00, startDate: startDate, endDate: endDate),
+    House(address: "R. Araruama", city: "Belo Horizonte", numberOfRooms: 3, price: 2000.00, startDate: startDate, endDate: endDate),
+    House(address: "R. Vidal Ramos", city: "Florianópolis", numberOfRooms: 2, price: 1800.00, startDate: startDate, endDate: endDate),
+    House(address: "Av. Ipiranga", city: "Porto Alegre", numberOfRooms: 1, price: 1000.00, startDate: startDate, endDate: endDate),
+    House(address: "Av. José Bastos", city: "Porto Alegre", numberOfRooms: 2, price: 1200.00, startDate: startDate, endDate: endDate)
 ]
 
 func calculateBudget(for house: House, numberOfDays: Int) -> Double {
