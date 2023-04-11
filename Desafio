@@ -29,19 +29,39 @@ ____________________________________
 R:
 ____________________________________
 
-// Crie uma matriz vazia de casas
-var houses = [House]()
+// Defina a estrutura da casa com as propriedades necessárias
+struct House {
+    var address: String
+    var city: String
+    var numberOfRooms: Int
+    var price: Double
+}
+
+// Crie uma matriz de casas
+var houses = [
+    House(address: "Av. Cásper Líbero", city: "São Paulo", numberOfRooms: 2, price: 1500.00),
+    House(address: "R. Antônio Basílio", city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00),
+    House(address: "R. Anne Frank", city: "Curitiba", numberOfRooms: 4, price: 3500.00),
+    House(address: "R. Araruama", city: "Belo Horizonte", numberOfRooms: 3, price: 2000.00),
+    House(address: "R. Vidal Ramos", city: "Florianópolis", numberOfRooms: 2, price: 1800.00),
+    House(address: "Av. Ipiranga", city: "Porto Alegre", numberOfRooms: 1, price: 1000.00)
+]
 
 // Adicione uma casa à matriz
-let newHouse = House(city: "São Paulo", numberOfRooms: 2, price: 1500.00)
-houses.append(newHouse)
+var novaCasa = House(address: "R. Portiundos", city: "Porto Alegre", numberOfRooms: 1, price: 800.00)
 
-// Remova uma casa da matriz
-houses.remove(at: 0)
+houses.insert(novaCasa, at:0)   // Adicione uma casa em uma posição específica da matriz
+houses.remove(at: 1)   // Remova uma casa da matriz
+print("Lista de casas:")
 
-// Adicione uma casa em uma posição específica da matriz
-let newHouse = House(city: "Rio de Janeiro", numberOfRooms: 3, price: 2500.00)
-houses.insert(newHouse, at: 0)
+for house in houses {
+    print("Address: \(house.address)")
+    print("City: \(house.city)")
+    print("Number of rooms: \(house.numberOfRooms)")
+    print("Price: \(house.price)")
+    print("")
+}
+
 ____________________________________
 - Listas toda as casas. (3)
 R:
